@@ -97,6 +97,7 @@
       "GHT",
       "GKS",
       "GundamGuy",
+      "HYPERION",
       "IssouCorp",
       "J4CK",
       "KAF",
@@ -172,7 +173,6 @@
       "HANAMi",
       "HazzAnim",
       "HiggsBoson",
-      "HYPERION",
       "kazuizui",
       "KHAYA",
       "KTH",
@@ -432,9 +432,9 @@
     "team_regex_count": 425,
     "generic_tier_counts": {
       "FR Team Tier 1": 55,
-      "FR Team Tier 2": 65,
-      "FR Team Tier 3": 29,
-      "FR Team Tier 4": 129
+      "FR Team Tier 2": 66,
+      "FR Team Tier 3": 54,
+      "FR Team Tier 4": 127
     },
     "anime_specialist_count": 15,
     "coverage_gaps": 0,
