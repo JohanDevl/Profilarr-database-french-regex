@@ -84,7 +84,7 @@ WHERE quality_profile_name = '1080p Balanced FR'
 
 -- Align existing soft HDLight penalties while preserving strict bans.
 UPDATE quality_profile_custom_formats
-SET score = -50000
+SET score = -60000
 WHERE custom_format_name = 'HDLight'
   AND score <> -999999;
 
