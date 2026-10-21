@@ -50,7 +50,9 @@ Le score de team est un bonus distinct du score technique. Une release peut ains
 
 ## Freeleech et Halfleech
 
-Les Custom Formats `Freeleech` et `Halfleech` utilisent les drapeaux transmis par l'indexeur. Ils reçoivent respectivement `+100` et `+50` dans tous les profils FR. Ces faibles bonus servent uniquement à départager des releases dont les autres critères sont comparables. Ils restent inférieurs aux écarts de qualité, d'audio et de tiers afin de ne pas dégrader la sélection pour économiser du ratio.
+Les Custom Formats `Freeleech` et `Halfleech` utilisent les drapeaux transmis par l'indexeur. Ils reçoivent respectivement `+5` et `+3` dans tous les profils FR. Ces faibles bonus servent uniquement à départager des releases dont les autres critères sont comparables.
+
+L'incrément minimal d'upgrade est fixé à `6`. Un drapeau Freeleech ou Halfleech ne peut donc pas provoquer seul un nouveau téléchargement après import, tandis que `Repack1`, scoré à `+6` comme chez Dictionarry, reste une amélioration valide. `Season Pack`, scoré à `+10`, reste également prioritaire dans Sonarr.
 
 ## Bans
 

@@ -178,7 +178,7 @@ INSERT INTO quality_profile_custom_formats (
   arr_type,
   score
 )
-SELECT target.profile_name, 'Freeleech', 'all', 100
+SELECT target.profile_name, 'Freeleech', 'all', 5
 FROM target
 WHERE EXISTS (
     SELECT 1
@@ -215,7 +215,7 @@ INSERT INTO quality_profile_custom_formats (
   arr_type,
   score
 )
-SELECT target.profile_name, 'Halfleech', 'all', 50
+SELECT target.profile_name, 'Halfleech', 'all', 3
 FROM target
 WHERE EXISTS (
     SELECT 1
@@ -228,5 +228,29 @@ WHERE EXISTS (
     WHERE qpcf.quality_profile_name = target.profile_name
       AND qpcf.custom_format_name = 'Halfleech'
   );
+
+-- Indexer flags are not reliable persistent upgrade criteria after import.
+-- Require a six-point gain so Freeleech and Halfleech only break ties during
+-- the initial grab, while Dictionarry's Repack1 score of 6 still upgrades.
+WITH target(profile_name) AS (
+  VALUES
+    ('720p Quality FR'),
+    ('1080p Balanced FR'),
+    ('1080p Compact FR'),
+    ('1080p Efficient FR'),
+    ('1080p Quality FR'),
+    ('1080p Quality HDR FR'),
+    ('1080p Remux FR'),
+    ('2160p Balanced FR'),
+    ('2160p Compact FR'),
+    ('2160p Efficient FR'),
+    ('2160p Quality FR'),
+    ('2160p Remux FR'),
+    ('Anime 1080p FR'),
+    ('Anime 1080p VOSTFR FR')
+)
+UPDATE quality_profiles
+SET upgrade_score_increment = 6
+WHERE name IN (SELECT profile_name FROM target);
 
 -- --- END op 9032
