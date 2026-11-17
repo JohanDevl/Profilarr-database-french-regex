@@ -12,6 +12,9 @@ Write local ops so they still work when upstream changes the same rows: guarded 
 | --- | --- |
 | `1000.local-finite-max-for-open-ended-size-bands.sql` | Open-ended size bands compile to `max: 0`, which the Arrs reject with HTTP 400 |
 | `1001.local-french-missing-require-non-french-language.sql` | French Missing fires at import on file names without a language tag (Amen), which blocks upgrades |
+| `1002.local-1080p-tier-for-codec-less-names.sql` | 1080p tier lost at import when the file name carries no codec tag |
+| `1003.local-quality-definition-max-below-arr-ceiling.sql` | Quality definition max one below the Arr ceiling, so Profilarr stops reporting drift |
+| `1004.local-2160p-bluray-light-fallback-for-markerless-names.sql` | 2160p 4KLight tier lost at import when the indexer title has "4KLight" but the file name does not (Alien³ FYT); also lets marker-less 2160p Bluray x265 releases up to 15 GiB score like 4KLight |
 
 ## Syncing upstream
 
